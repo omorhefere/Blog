@@ -43,6 +43,7 @@ gem 'mail_form'
 gem 'devise', '>= 3.5.2'
 
 
+
 gem 'cancancan'
 gem 'rails_admin'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"

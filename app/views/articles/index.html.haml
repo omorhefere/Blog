@@ -18,7 +18,10 @@
                     %br
                     -#Show the fist 350 characters of the article
                     %p.text=truncate( article.text, length:350)
+                    %br
+                    %br
+                    %br
                     -#button to show the full article.
 
-                    %ul.tags
-                        %li.tag= raw tag_links(article.all_tags)
+                    %div.tags
+                        %p.tag= raw tag_links(article.all_tags)
