@@ -1,0 +1,4 @@
+= simple_form_for([@article, @article.comments.build]) do |f|
+    = f.input :commenter,required: true, placeholder: "Email", label:false
+    = f.input :body,required: true, placeholder: "Comment", label:false
+    =  f.submit "Post", class: "show-flash btn button1  btn-default"

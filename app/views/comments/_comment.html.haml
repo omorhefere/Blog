@@ -1,0 +1,11 @@
+.container.comments_container.col-sm-12
+  - @article.comments.reject(&:new_record?).reverse.each do |comment|
+    %hr
+      %p.user
+        %strong
+        = comment.commenter
+        %br
+        %br
+        = comment.body
+        %br
+        %br

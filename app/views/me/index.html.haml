@@ -1,0 +1,25 @@
+-  content_for :title, "About Me"
+- @sticky_footer = true
+= stylesheet_link_tag "application", media: :all
+= stylesheet_link_tag  "me", media: :all
+= javascript_include_tag "application"
+
+
+
+%div.container.buffered-top
+
+
+        %h2.col-xs-12.col-sm-6.col-md-8.move I'm Omorhefere O. Imoloame
+
+        %a.link{:href => "https://github.com/omorhefere",:target => "_blank"}
+                %i.fa.fa-github.fa-2x
+        %a.link{:href => "https://www.linkedin.com/in/omorhefere-imoloame-025119a3",:target => "_blank"}
+                %i.fa.fa-linkedin-square.fa-2x
+
+
+        %p.bio
+                I am a
+                %span#age
+                        19
+                year old undergraduate at the University of Sheffield studying Software Engineering. I am from Lagos, Nigeria and I
+                am interested in building web applications and machine learning. This is my personal blog built for me to talk about my interests and show off my work.

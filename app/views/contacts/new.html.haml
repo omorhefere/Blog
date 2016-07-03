@@ -1,0 +1,18 @@
+-  content_for :title, "ContactPage"
+= stylesheet_link_tag "application", media: :all
+= stylesheet_link_tag    "contact", media: :all
+
+= javascript_include_tag "application"
+
+
+%div{:align => "center"}
+
+  = simple_form_for Contact.new, :html => {:class => 'form-horizontal' } do |f|
+    .inputs
+      = f.input :name, :required => true, autofocus: true,  placeholder: "Name", label:false
+      = f.input :email, :required => true,autofocus: true,  placeholder: "Email", label:false
+      = f.input :message, :as => :text, :required => true,autofocus: true,  placeholder: "Message", label:false,:input_html => { :cols => 70}
+      .hidden
+        = f.input :nickname, :hint => 'Leave this field blank!'
+    .div
+      = f.button :submit, 'Send message', :class=> "btn btn-primary"

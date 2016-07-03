@@ -1,0 +1,68 @@
+!!!
+%html
+  %head
+    %title OOI II
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+    %meta{ :'http-equiv' => 'X-UA-Compatible', content: 'IE=edge' }
+    = javascript_include_tag "application"
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .wrap
+      #contactModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+        .modal-dialog{:role => "document"}
+          .modal-content
+            .modal-header
+              %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+                %span{"aria-hidden" => "true"} ×
+              %h4#myModalLabel.modal-title Contact Me
+            .modal-body
+              =render :file => 'contacts/new'
+      .container.whole
+        %ul.nav.navbar-nav.navbar-right.col-xs-12.col-sm-6.col-md-4
+          -# Home button
+          - if @current_nav_identifier==:blog
+            = navbar_link_to :root, title: "Go to the blog page", identifier: :root, :id => "navbuttonactive" do
+              Blog
+          - else
+            = navbar_link_to :root, title: "Go to the blog page", identifier: :root, :id => "navbutton" do
+              Blog
+          -# Bio Button
+          - if @current_nav_identifier==:me
+            = navbar_link_to :me, title: "Me", identifier: :Me, :id => "navbuttonactive" do
+              Me
+          - else
+            = navbar_link_to :me, title: "Me", identifier: :Me, :id => "navbutton" do
+              Me
+          -# Portfolio
+          - if @current_nav_identifier==:portfolio
+            = navbar_link_to :portfolio, title: "Portfolio", identifier: :portfolio, :id => "navbuttonactive" do
+              Portfolio
+          - else
+            = navbar_link_to :portfolio, title: "Portfolio", identifier: :portfolio, :id => "navbutton" do
+              Portfolio
+          = navbar_link_to "#contactModal", title: "Contact", :data => {:toggle=>"modal"} do
+            Contact
+
+
+        %ul.nav.navbar-nav.navbar-left
+
+
+
+        %h1.col-xs-12.col-sm-6.col-md-4
+          OOI II
+
+      = yield
+-# Sticky foter
+- if @sticky_footer
+  %footer.navbar-fixed-bottom.col-sm-12
+    .container#stickyFooter
+      %p.col-xs-12.col-sm-6.col-md-4.footer
+        &copy; OOI II - #{Date.today.year}
+
+- else
+  %footer.footer.col-sm-12
+    .container
+      %p.col-xs-12.col-sm-6.col-md-4.footer
+        &copy; OOI II - #{Date.today.year}

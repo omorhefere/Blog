@@ -1,0 +1,32 @@
+-  content_for :title, "Portfolio Page"
+= stylesheet_link_tag "application", media: :all
+= stylesheet_link_tag    "articles", media: :all
+= stylesheet_link_tag    "portfolio", media: :all
+= javascript_include_tag "application"
+
+
+%div.container.buffered-top
+    -# List news article in a reverse order to show last article first.
+
+
+    - @portfolios.reverse.each do |portfolio|
+        .col-xs-12.col-sm-6.col-md-6
+
+            %h3.time=portfolio.title
+
+            .image.col-sm-12
+                -# %a{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
+                = image_tag portfolio.image1.url(:medium),:class => "style_image img-responsive"
+                - if !portfolio.link.blank?
+                    %a.link{:href => "http://#{portfolio.link}",:target => "_blank"}
+                        %i.fa.fa-github.fa-2x
+                    -#%i.fa.fa-github.fa-2x
+                    -#    %p.imgDescription
+                        %i.fa.fa-search.fa-2x{"aria-hidden" => "true"}
+                .caption
+                    %br
+                    -#Show the fist 350 characters of the article
+                    %p.text= portfolio.text
+                    -#tags
+                    %div.tags
+                        %p.tags= raw portfolio.all_tags

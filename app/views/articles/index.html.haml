@@ -1,0 +1,24 @@
+-  content_for :title, "Blog Page"
+= stylesheet_link_tag "application", media: :all
+= stylesheet_link_tag    "articles", media: :all
+
+
+
+%div.container.buffered-top
+    -# List news article in a reverse order to show last article first.
+
+    - @articles.reverse.each do |article|
+        .col-xs-12.col-sm-6.col-md-8.move
+
+            %h3.time=link_to("#{article.title}", article_path(article)  )
+            %p.text.time=article.date
+            .image.col-sm-12
+                =image_tag article.avatar.url(:medium),:class => "style_image img-responsive"
+                .caption
+                    %br
+                    -#Show the fist 350 characters of the article
+                    %p.text=truncate( article.text, length:350)
+                    -#button to show the full article.
+
+                    %ul.tags
+                        %li.tag= raw tag_links(article.all_tags)
