@@ -34,4 +34,10 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+  config.authorize_with do
+    authenticate_or_request_with_http_basic('Login required') do |username, password|
+      username == Rails.application.secrets.user &&
+      password == Rails.application.secrets.password
+    end
+  end
 end

@@ -8,18 +8,25 @@
 
 %div.container.buffered-top
 
-
         %h2.col-xs-12.col-sm-6.col-md-8.move I'm Omorhefere O. Imoloame
 
         %a.link{:href => "https://github.com/omorhefere",:target => "_blank"}
                 %i.fa.fa-github.fa-2x
         %a.link{:href => "https://www.linkedin.com/in/omorhefere-imoloame-025119a3",:target => "_blank"}
                 %i.fa.fa-linkedin-square.fa-2x
+        %a.link{:href => "https://www.facebook.com/imoloame",:target => "_blank"}
+                %i.fa.fa-facebook.fa-2x
+        %a.link{:href => "mailto:efeimoloame@icloud.com",:target => "_blank"}
+                %i.fa.fa-envelope.fa-2x
+        %ul.nav.nav-pills.nav-justified.col-md-6.pill
+                %li#one.pill
+                        %a{"data-toggle" => "tab", :href => "#"}Biography
+                %li#two.pill{"data-toggle" => "tab"}
+                        %a{:href => "#"} Experience
+                %li#three.pill{"data-toggle" => "tab"}
+                        %a{:href => "#"} Skills
+                #biography.tab-pane
+                        =render 'biography'
+                #skills.tab-pane
 
-
-        %p.bio
-                I am a
-                %span#age
-                        19
-                year old undergraduate at the University of Sheffield studying Software Engineering. I am from Lagos, Nigeria and I
-                am interested in building web applications and machine learning. This is my personal blog built for me to talk about my interests and show off my work.
+                #experience.tab-pane

@@ -1,4 +1,4 @@
--  content_for :title, "Portfolio Page"
+- content_for :title, "Portfolio Page"
 = stylesheet_link_tag "application", media: :all
 = stylesheet_link_tag    "articles", media: :all
 = stylesheet_link_tag    "portfolio", media: :all
@@ -10,6 +10,7 @@
 
 
     - @portfolios.reverse.each do |portfolio|
+        = will_paginate @portfolios,  renderer: BootstrapPagination::Rails
         .col-xs-12.col-sm-6.col-md-6
 
             %h3.time=portfolio.title

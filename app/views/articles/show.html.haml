@@ -23,14 +23,6 @@
             %p.text=@article.text
 
 
-
-
             .container.post_comments_container.col-sm-12
               %p.text-muted
-                %h2 Discussion
-                = render 'comments/comment'
-                %br
-
-                %br
-
-                =  render 'comments/form'
+                - disqus_thread

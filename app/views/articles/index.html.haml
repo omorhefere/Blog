@@ -1,4 +1,4 @@
--  content_for :title, "Blog Page"
+- content_for :title, "Blog Page"
 = stylesheet_link_tag "application", media: :all
 = stylesheet_link_tag    "articles", media: :all
 
@@ -8,6 +8,7 @@
     -# List news article in a reverse order to show last article first.
 
     - @articles.reverse.each do |article|
+        = will_paginate @articles,  renderer: BootstrapPagination::Rails
         .col-xs-12.col-sm-6.col-md-8.move
 
             %h3.time=link_to("#{article.title}", article_path(article)  )

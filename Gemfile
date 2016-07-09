@@ -41,6 +41,8 @@ gem 'bootstrap-will_paginate'
 gem 'font-awesome-sass'
 gem 'mail_form'
 gem 'devise', '>= 3.5.2'
+gem 'disqus_rails'
+gem 'will_paginate-bootstrap'
 
 
 

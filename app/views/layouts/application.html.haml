@@ -8,17 +8,9 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    = disqus_init
   %body
     .wrap
-      #contactModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-        .modal-dialog{:role => "document"}
-          .modal-content
-            .modal-header
-              %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-                %span{"aria-hidden" => "true"} ×
-              %h4#myModalLabel.modal-title Contact Me
-            .modal-body
-              =render :file => 'contacts/new'
       .container.whole
         %ul.nav.navbar-nav.navbar-right.col-xs-12.col-sm-6.col-md-4
           -# Home button
@@ -42,13 +34,6 @@
           - else
             = navbar_link_to :portfolio, title: "Portfolio", identifier: :portfolio, :id => "navbutton" do
               Portfolio
-          = navbar_link_to "#contactModal", title: "Contact", :data => {:toggle=>"modal"} do
-            Contact
-
-
-        %ul.nav.navbar-nav.navbar-left
-
-
 
         %h1.col-xs-12.col-sm-6.col-md-4
           OOI II
