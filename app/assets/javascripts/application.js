@@ -17,9 +17,17 @@
 //= require_tree
 //= require disqus_rails
 
-$(document).ready(function () {
 
-  $('#myModal').modal('options');
+
+$(document).ready(function () {
+  $('#myModal').on('show.bs.modal', function (e) {
+    var image = $(event.relatedTarget);
+    var recipient = image.data('src')
+    console.log(image)
+    var modal = $(this);
+    modal.find('.modal-body').val(recipient);
+          });
+
   var age = Math.floor((new Date() - new Date('1994/9/19')) / 31536000000);
 
   //highlight links of page you're on
