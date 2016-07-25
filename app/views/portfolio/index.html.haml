@@ -6,14 +6,12 @@
 
 
 %div.container.buffered-top
-    -# List news article in a reverse order to show last article first.
-
-
+    -# List news article in a reverse order to show last article first.yes please yes it does thanklyou, okay thankyou
     - @portfolios.reverse.each_with_index do |portfolio,index|
         = will_paginate @portfolios,  renderer: BootstrapPagination::Rails
         / Trigger the modal with a button
         / Modal
-        #myModal.modal.fade{:role => "dialog"}
+        .modal.fade{:role => "dialog", id: "#{"myModal" + index.to_s}"}
             .modal-dialog
                 / Modal content
                 .modal-content
@@ -21,19 +19,21 @@
                         %i.fa.fa-times.fa-2x.close{"aria-hidden" => "true","data-dismiss" => "modal", :type => "button"}
                         %h4.modal-title=portfolio.title
                     .modal-body
-                        %img.pic.img-responsive{:src => ""}/
+                        /%img.pic.img-responsive{:src => "",:index=>""}/
+                        =image_tag portfolio.image1.url(:medium),:class => "style_image img-responsive", :index => index
 
         .col-xs-12.col-sm-6.col-md-6
             .image.col-sm-12
-                %a{"data-target" => "#myModal", "data-toggle" => "modal"}
-                    =image_tag portfolio.image1.url(:medium),:class => "style_image img-responsive"
+                %a{"data-target" => "#myModal#{index.to_s}", "data-toggle" => "modal", :index => index,}
+                    =image_tag portfolio.image1.url(:medium),:class => "style_image img-responsive", :index => index
                 - if !portfolio.link.blank?
                     %a.link{:href => "http://#{portfolio.link}",:target => "_blank"}
                         %i.fa.fa-github.fa-2x
-                %a{"data-target" => "#myModal", "data-toggle" => "modal"}
+                %a{"data-target" => "#myModal#{index.to_s}", "data-toggle" => "modal"}
                     %p.imgDescription
-                        =portfolio.title
-                        %i.fa.fa-search.fa-2x{"aria-hidden" => "true"}
+                    =portfolio.title
+                    %i.fa.fa-search.fa-2x{"aria-hidden" => "true"}
+
                 .caption
                     %br
                     -#Show the fist 350 characters of the article

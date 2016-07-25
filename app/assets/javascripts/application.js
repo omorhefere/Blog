@@ -21,12 +21,13 @@
 
 $(document).ready(function () {
   $('#myModal').on('show.bs.modal', function (e) {
-    var image = $(event.relatedTarget);
+    var image = $(e.relatedTarget).attr('src');
     var recipient = image.data('src')
     console.log(image)
     var modal = $(this);
     modal.find('.modal-body').val(recipient);
-          });
+});
+
 
   var age = Math.floor((new Date() - new Date('1994/9/19')) / 31536000000);
 
