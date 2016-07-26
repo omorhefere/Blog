@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require_tree
 //= require disqus_rails
+//= require d3
 
 
 

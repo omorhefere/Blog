@@ -14,7 +14,8 @@
             %h3.time=link_to("#{article.title}", article_path(article)  )
             %p.text.time=article.date
             .image.col-sm-12
-                =image_tag article.avatar.url(:medium),:class => "style_image img-responsive"
+                =link_to image_tag(article.avatar.url(:medium)), article_path(article),:class => "style_image img-responsive"
+            
                 .caption
                     %br
                     -#Show the fist 350 characters of the article
