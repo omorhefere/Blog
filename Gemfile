@@ -43,8 +43,8 @@ gem 'mail_form'
 gem 'devise', '>= 3.5.2'
 gem 'disqus_rails'
 gem 'will_paginate-bootstrap'
-gem "d3-rails"
 
+gem 'd3_rails'
 
 
 gem 'cancancan'

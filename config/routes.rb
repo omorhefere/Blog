@@ -22,6 +22,7 @@ Rails.application.routes.draw do
    match "/500", to: "errors#error_500", via: :all
    get 'tags/:tag', to: 'articles#index', as: "tag"
    get 'portfolio/:tag', to: 'portfolio#index', as: "portfoliotag"
+   get 'me/data', :defaults => { :format => 'json' }
 
    match '/contacts',     to: 'contacts#new',             via: 'get'
 

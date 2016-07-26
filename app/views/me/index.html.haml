@@ -3,12 +3,13 @@
 = stylesheet_link_tag "application", media: :all
 = stylesheet_link_tag  "me", media: :all
 = javascript_include_tag "application"
+= javascript_include_tag "graph"
 
 
 
 %div.container.buffered-top
 
-        %h2.col-xs-12.col-sm-6.col-md-8.move I'm Omorhefere O. Imoloame
+        %h2.col-xs-12.col-sm-6.col-md-8.move I'm Omorhefere O. Imoloame (Efe).
 
         %a.link{:href => "https://github.com/omorhefere",:target => "_blank"}
                 %i.fa.fa-github.fa-2x
@@ -28,6 +29,6 @@
                 #biography.tab-pane
                         =render 'biography'
                 #skills.tab-pane
-
+                        =render 'skills'
                 #experience.tab-pane
                         =render 'experience'
