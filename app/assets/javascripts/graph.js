@@ -12,13 +12,16 @@ $.ajax({
        });
 
 function draw(data) {
+    // the colour
     var color = d3.scale.category20b();
-    var width = 420,
-        barHeight = 20;
+    //the width of the chart
+    var width = 800,
+        barHeight = 20; // the height of the bar.
+    var language = ["Vanilla Javascrript", "Python", "Ruby on Rails", "Node Js", "Angular 2"];
 
     var x = d3.scale.linear()
         .range([0, width])
-        .domain([0, d3.max(data)]);
+        .domain([0, 5]);
 
     var chart = d3.select("#graph")
         .attr("width", width)
@@ -34,19 +37,20 @@ function draw(data) {
     bar.append("rect")
         .attr("width", x)
         .attr("height", barHeight - 1)
+
         .style("fill", function (d) {
-                   return color(d)
+                   return color(d);
                })
 
     bar.append("text")
         .attr("x", function (d) {
-                  return x(d) - 10;
+                  return 10;
               })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
         .style("fill", "white")
         .text(function (d) {
-                  return d;
+                  return d.key;
               });
 }
 

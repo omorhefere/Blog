@@ -4,7 +4,6 @@
     %title OOI II
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
     %meta{ :'http-equiv' => 'X-UA-Compatible', content: 'IE=edge' }
-    = javascript_include_tag "application"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -36,7 +35,7 @@
               Portfolio
 
         %h1.col-xs-12.col-sm-6.col-md-4
-          OOI II
+          =link_to "OOI II",:root,:class => "link"
 
       = yield
 -# Sticky foter

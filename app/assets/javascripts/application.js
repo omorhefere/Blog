@@ -21,26 +21,19 @@
 
 
 $(document).ready(function () {
-  $('#myModal').on('show.bs.modal', function (e) {
-    var image = $(e.relatedTarget).attr('src');
-    var recipient = image.data('src')
-    console.log(image)
-    var modal = $(this);
-    modal.find('.modal-body').val(recipient);
-});
 
-
-  var age = Math.floor((new Date() - new Date('1994/9/19')) / 31536000000);
-
-  //highlight links of page you're on
-  $('.dropdown-toggle').dropdown();
-
+  $('footer').css('margin-top',
+    $(document).height()
+    - ( $('header').height() + $('div').height() )
+    - $('footer').height()
+  );
   // hide project divs when you first open profile page
   $('#biography').hide();
   $('#experience').hide();
   $('#skills').hide();
   // keep footer at the bottom of the page.
-
+  //highlight links of page you're on
+  $('.dropdown-toggle').dropdown();
   // click project tab and to activate it and show projects
   $('#one').click(function (e) {
     e.preventDefault();
