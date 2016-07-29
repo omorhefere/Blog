@@ -1,9 +1,8 @@
-$(function() {
-  $("#bars li .bar").each( function( key, bar ) {
-    var percentage = $(this).data('percentage');
+$(document).ready(function () {
 
-    $(this).animate({
-      'height' : percentage + '%'
-    }, 1000);
-  });
+  $('footer').css('margin-top',
+    $(document).height()
+    - ( $('header').height() + $('div').height() )
+    - $('footer').height()
+  );
 });

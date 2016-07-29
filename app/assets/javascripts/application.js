@@ -22,11 +22,7 @@
 
 $(document).ready(function () {
 
-  $('footer').css('margin-top',
-    $(document).height()
-    - ( $('header').height() + $('div').height() )
-    - $('footer').height()
-  );
+
   // hide project divs when you first open profile page
   $('#biography').hide();
   $('#experience').hide();
