@@ -19,8 +19,9 @@
                 .caption
                     %br
                     -#Show the fist 350 characters of the article
-                    %p.text=link_to truncate( article.text, length:350), article_path(article)
-                    %br
+                    %p.text
+                        =link_to truncate( article.text, length:350), article_path(article)
+                        %br
                     %br
                     %br
                     -#button to show the full article.
