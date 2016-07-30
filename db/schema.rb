@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730010949) do
+ActiveRecord::Schema.define(version: 20160730012354) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160730010949) do
     t.integer  "image6_file_size"
     t.datetime "image6_updated_at"
     t.string   "link"
+    t.string   "weblinks"
   end
 
   create_table "taggings", force: :cascade do |t|

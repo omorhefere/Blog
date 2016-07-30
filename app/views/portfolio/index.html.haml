@@ -26,7 +26,7 @@
                     .modal-body
                         .picture
                             =image_tag portfolio.image1.url(:thumb),:class => "style_image img-responsive", :index => index
-                        - if !portfolio.weblink.blank?
+                        - if !portfolio.weblinks.blank?
                             %a.link{:href => "http://#{portfolio.weblink}",:target => "_blank"}
                                 %i.fa.fa-link.fa-2x
                         - if !portfolio.link.blank?
