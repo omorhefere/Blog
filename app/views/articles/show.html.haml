@@ -22,7 +22,9 @@
             %br
             %p.text=@article.text
 
+            = social_share_button_tag(@article.title)
+
 
             .container.post_comments_container.col-sm-12
               %p.text-muted
-                - disqus_thread
+                =render 'comments'

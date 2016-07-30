@@ -43,7 +43,7 @@ gem 'mail_form'
 gem 'devise', '>= 3.5.2'
 gem 'disqus_rails'
 gem 'will_paginate-bootstrap'
-
+gem 'social-share-button'
 gem 'd3_rails'
 
 

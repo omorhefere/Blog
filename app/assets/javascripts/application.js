@@ -17,7 +17,7 @@
 //= require_tree
 //= require disqus_rails
 //= require d3.v3
-
+//= require social-share-button
 
 
 $(document).ready(function () {
