@@ -6,6 +6,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :letter_opener
   config.paperclip_defaults = {
     storage: :s3,
+    s3_protocol: 'http',
     s3_credentials: {
       bucket: ENV.fetch('S3_BUCKET_NAME'),
       access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
@@ -38,7 +39,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
