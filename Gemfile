@@ -45,6 +45,7 @@ gem 'disqus_rails'
 gem 'will_paginate-bootstrap'
 gem 'social-share-button'
 gem 'd3_rails'
+gem 'aws-sdk', '>= 2.0.34'
 
 
 gem 'cancancan'
