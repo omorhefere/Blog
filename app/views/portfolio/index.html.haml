@@ -27,7 +27,7 @@
                         .picture
                             =image_tag portfolio.image1.url(:thumb),:class => "style_image img-responsive", :index => index
                         - if !portfolio.weblinks.blank?
-                            %a.link{:href => "http://#{portfolio.weblink}",:target => "_blank"}
+                            %a.link{:href => "http://#{portfolio.weblinks}",:target => "_blank"}
                                 %i.fa.fa-link.fa-2x
                         - if !portfolio.link.blank?
                             %a.link{:href => "http://#{portfolio.link}",:target => "_blank"}
