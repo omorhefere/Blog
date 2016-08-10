@@ -6,7 +6,7 @@
 = javascript_include_tag "portfolio"
 
 
-%div.container.buffered-top
+%div.container-fluid.buffered-top
     -# List news article in a reverse order to show last article first.yes please yes it does thanklyou, okay thankyou
     - @portfolios.reverse.each_with_index do |portfolio,index|
         = will_paginate @portfolios,  renderer: BootstrapPagination::Rails

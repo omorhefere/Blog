@@ -52,6 +52,7 @@ gem 'cancancan'
 gem 'rails_admin'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'will_paginate', '~> 3.1.0'
+gem 'sitemap_generator'
 
 
 group :development, :test do

@@ -309,6 +309,8 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    sitemap_generator (5.1.0)
+      builder
     social-share-button (0.3.1)
       coffee-rails
       sass-rails
@@ -396,6 +398,7 @@ DEPENDENCIES
   shoulda-matchers
   simple_form
   simplecov
+  sitemap_generator
   social-share-button
   spring
   sqlite3

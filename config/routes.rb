@@ -22,6 +22,8 @@ Rails.application.routes.draw do
    match "/500", to: "errors#error_500", via: :all
    get 'tags/:tag', to: 'articles#index', as: "tag"
    match '/contacts',     to: 'contacts#new',             via: 'get'
+   # routes.rb file
+   get '/sitemap.xml.gz', to: redirect("https://#{ENV['S3_BUCKET']}.s3.amazonaws.com/sitemaps/sitemap.xml.gz"), as: :sitemap
 
 
   # Example of regular route:

@@ -4,18 +4,17 @@
 
 
 
-%div.container.buffered-top
+%div.container-fluid.buffered-top
     -# List news article in a reverse order to show last article first.
 
     - @articles.reverse.each do |article|
         = will_paginate @articles,  renderer: BootstrapPagination::Rails
-        .col-xs-12.col-sm-6.col-md-8.move
+        .col-xs-6.col-sm-4.move
 
             %h3.time=link_to("#{article.title}", article_path(article)  )
             %p.text.time=article.date
             .image.col-sm-12
                 =link_to image_tag(article.avatar.url(:medium)), article_path(article),:class => "style_image img-responsive"
-
                 .caption
                     %br
                     -#Show the fist 350 characters of the article
@@ -25,6 +24,5 @@
                     %br
                     %br
                     -#button to show the full article.
-
                     %div.tags
                         %p.tag= raw tag_links(article.all_tags)
