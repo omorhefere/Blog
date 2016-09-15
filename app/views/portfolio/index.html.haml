@@ -22,23 +22,22 @@
 
                     %h4.modal-title=portfolio.title
 
-
                     .modal-body
                         .picture
                             =image_tag portfolio.image1.url(:thumb),:class => "style_image img-responsive", :index => index
                         - if !portfolio.weblinks.blank?
                             %a.link{:href => "http://#{portfolio.weblinks}",:target => "_blank"}
-                                %i.fa.fa-link.fa-2x
+                                %i.fa.fa-link.fa-2x.git
                         - if !portfolio.link.blank?
                             %a.link{:href => "http://#{portfolio.link}",:target => "_blank"}
-                                %i.fa.fa-github.fa-2x
+                                %i.fa.fa-github.fa-2x.git
                         %br
                         %br
                         -#Show the fist 350 characters of the article
                         %p.text= portfolio.text
 
         .col-xs-12.col-sm-6.col-md-6
-            .image.col-sm-12
+            .image.col-sm-12.animated.slideInUp
                 %a{"data-target" => "#myModal#{index.to_s}", "data-toggle" => "modal", :index => index}
                     =image_tag portfolio.image1.url(:medium),:class => "style_image img-responsive", :index => index
                 %a{"data-target" => "#myModal#{index.to_s}", "data-toggle" => "modal"}

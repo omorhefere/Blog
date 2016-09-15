@@ -57,6 +57,8 @@ GEM
     addressable (2.4.0)
     airbrussh (1.1.0)
       sshkit (>= 1.6.1, != 1.7.0)
+    animate-rails (1.0.10)
+      rails
     arel (6.0.3)
     autoprefixer-rails (6.3.7)
       execjs
@@ -356,6 +358,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  animate-rails
   aws-sdk (>= 2.0.34)
   bootstrap-sass
   bootstrap-will_paginate

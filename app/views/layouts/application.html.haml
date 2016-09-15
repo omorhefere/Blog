@@ -2,8 +2,13 @@
 %html
   %head
     %title OOI II
-    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
-    %meta{ :'http-equiv' => 'X-UA-Compatible', content: 'IE=edge' }
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "My personal blog", :name => "description"}/
+    %meta{:content => "Omorhefere O. Imoloame", :name => "author"}/
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }/
+    %meta{ :'http-equiv' => 'X-UA-Compatible', content: 'IE=edge' }/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -11,32 +16,27 @@
   %body
     .wrap
       .container-fluid.whole
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav.navbar-right.col-xs-6.col-sm-4
-            -# Home button
-            - if @current_nav_identifier==:blog
-              = navbar_link_to :root, title: "Go to the blog page", identifier: :root, :id => "navbuttonactive" do
-                Blog
-            - else
-              = navbar_link_to :root, title: "Go to the blog page", identifier: :root, :id => "navbutton" do
-                Blog
-            -# Bio Button
-            - if @current_nav_identifier==:me
-              = navbar_link_to :me, title: "Me", identifier: :Me, :id => "navbuttonactive" do
-                Me
-            - else
-              = navbar_link_to :me, title: "Me", identifier: :Me, :id => "navbutton" do
-                Me
-            -# Portfolio
-            - if @current_nav_identifier==:portfolio
-              = navbar_link_to :portfolio, title: "Portfolio", identifier: :portfolio, :id => "navbuttonactive" do
-                Portfolio
-            - else
-              = navbar_link_to :portfolio, title: "Portfolio", identifier: :portfolio, :id => "navbutton" do
-                Portfolio
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
 
-          %h1.col-xs-6.col-sm-4
-            =link_to "OOI II",:root,:class => "link"
+        #myNavbar.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right.col-xs-6.col-sm-4
+
+            = navbar_link_to :root, title: "Go to the blog page", identifier: :root do
+              Blog
+
+            = navbar_link_to :me, title: "Me", identifier: :Me do
+              Me
+
+            = navbar_link_to :portfolio, title: "Portfolio", identifier: :portfolio do
+              Portfolio
+
+
+        %h1.col-xs-6.col-sm-4.col-md-4.name.animated.slideInUp
+          =link_to "OOI II",:root,:class => "link"
 
       = yield
 -# Sticky foter
@@ -44,10 +44,10 @@
   %footer.navbar-fixed-bottom.col-sm-12
     .container#stickyFooter
       %p.col-xs-6.col-sm-4.footer
-        &copy; OOI II - #{Date.today.year}
+        &copy; OOI II  #{Date.today.year}
 
 - else
   %footer.footer.col-sm-12
     .container
       %p.col-xs-6.col-sm-4.footer
-        &copy; OOI II - #{Date.today.year}
+        &copy; OOI II  #{Date.today.year}

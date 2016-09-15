@@ -1,3 +1,5 @@
+
+
 //Article image
 .style_image
   width: 100%
@@ -22,8 +24,7 @@ p.time
 .move
   margin-left: 17%
 h2.move
-  font-size: 350%
-  margin-left: 32.5%
+
 .social-share-button
   margin-left: 14%
   margin-top: 6%
@@ -36,3 +37,33 @@ h2.move
     margin-left: 4.5%
 
 .social-share-button-facebook .social-share-button-email .social-share-button-linkedin .social-share-button-tumblr
+
+
+$breakpoint-tablet: 768px
+$breakpoint-mobile: 568px
+
+@media (min-width: $breakpoint-tablet)
+  h1.name1
+    font-size: 350%
+    margin-left: 32.5%
+
+
+
+@media (max-width: $breakpoint-mobile)
+  .page-header
+    .jumbotron.jtron
+      width: 120%
+
+  .social-share-button
+
+    .ssb-icon
+      background-size: 30px 30px
+      height: 30px
+      width: 30px
+      border-radius: 30px
+      margin-left: 4.5%
+  p.text1
+    font-size: 105%
+  h1.name1
+    font-size: 250%
+    margin-left: 27%

@@ -10,6 +10,7 @@
 
 h3
   font-size: 350%
+
 a
   color: black
 
@@ -27,10 +28,6 @@ p.text
 // Article time
 .time
   padding-top: 2%
-  padding-left: 3%
-
-p.tags
-  font-size: 135%
 
 .move
   margin-left: 20%
@@ -44,6 +41,7 @@ p.tags
   padding: 0
   margin-bottom: 5%
 
+
 .tag
   margin-top: 25%
   border-radius: 3px 0 0 3px
@@ -51,9 +49,16 @@ p.tags
   height: 26px
   line-height: 26px
   padding-right: 10%
-
   position: relative
   margin: 0 10px 10px 0
   -webkit-transition: color 0.2s
-  text-decoration: none
+  text-decoration: underline
   font-size: 220%
+
+
+$breakpoint-tablet: 768px
+@media (max-width: $breakpoint-tablet)
+  h3
+    font-size: 200%
+  .tag
+    font-size: 150%

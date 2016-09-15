@@ -118,3 +118,33 @@ h1
 .ticks li:nth-child(6)
   position: relative
   left: 5%
+
+
+
+$breakpoint-tablet: 768px
+$breakpoint-mobile: 568px
+@media (max-width: $breakpoint-tablet)
+  .move
+    margin-left: 17%
+  .exp
+    margin-left: 10%
+
+  .fa-github
+    margin-left: 33%
+  .fa-github, .fa-linkedin-square, .fa-envelope, .fa-facebook, .fa-file
+    margin-bottom: 3.5%
+  .n
+    margin-left: 10%
+  .chart-container
+    margin-left: -10%
+
+
+
+@media (max-width: $breakpoint-mobile)
+  h3
+    font-size: 100%
+  .move
+    font-size: 80%
+    margin-left: 24%
+  .chart-container
+    margin-left: -20%

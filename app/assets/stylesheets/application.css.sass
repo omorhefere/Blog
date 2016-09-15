@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -9,8 +10,9 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ *= require animate
  */
+
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
@@ -20,6 +22,58 @@
 @import "social-share-button"
 
 
+
+$breakpoint-tablet: 768px
+$breakpoint-mobile: 568px
+@media (min-width: $breakpoint-tablet)
+  h1.name
+    margin-top: 9%
+    margin-bottom: 2.5%
+    margin-left: 42%
+    font-size: 450%
+    color: black
+@media (max-width: $breakpoint-tablet)
+  .container
+    margin-right: 20%
+    max-width: $breakpoint-tablet
+  .name
+    margin-left: 40%
+    font-size: 250%
+  .footer
+    font-size: 85%
+  h2
+    font-size: 100%
+  .social-share-button
+
+    .ssb-icon
+      background-size: 30px 30px
+      height: 30px
+      width: 30px
+      border-radius: 30px
+      margin-left: 4.5%
+
+
+
+
+@media (max-width: $breakpoint-mobile)
+
+  .name
+    margin-left: 25%
+    font-size: 220%
+  h2
+    font-size: 100%
+  .social-share-button
+
+    .ssb-icon
+      background-size: 30px 30px
+      height: 30px
+      width: 30px
+      border-radius: 30px
+      margin-left: 4.5%
+
+
+.icon-bar
+  background-color: black
 .whole
   margin-top: 2%
   width: 80%
@@ -27,12 +81,7 @@
 .navbar-header
   margin-left: 40%
 
-h1
-  margin-top: 9%
-  margin-bottom: 2.5%
-  margin-left: 42%
-  font-size: 450%
-  color: black
+
 
 h1:hover
   color: black

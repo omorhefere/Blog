@@ -22,11 +22,12 @@
 
 $(document).ready(function () {
 
-
+  $('#navbar').collapse('hide');
   // hide project divs when you first open profile page
   $('#biography').hide();
   $('#experience').hide();
   $('#skills').hide();
+
   // keep footer at the bottom of the page.
   //highlight links of page you're on
   $('.dropdown-toggle').dropdown();

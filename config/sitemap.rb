@@ -8,11 +8,8 @@ SitemapGenerator::Sitemap.create do
   add me_path
 
 
-
-
-
    Article.find_each do |article|
      add article_path(article), :lastmod => article.updated_at
    end
-   
+
 end
