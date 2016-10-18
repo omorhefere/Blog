@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400+700)
+h4
+  margin-left: 19%
 .pill
   font-size: 120%
-.move
-  margin-left: 30%
+
 .bio,.exp
   margin-left: 17.5%
   width: 75%
@@ -126,27 +127,40 @@ h1
 $breakpoint-tablet: 768px
 $breakpoint-mobile: 568px
 @media (max-width: $breakpoint-tablet)
-  .move
-    margin-left: 17%
+
   .exp
     margin-left: 10%
 
   .fa-github
-    margin-left: 33%
+    margin-left: 40%
   .fa-github, .fa-linkedin-square, .fa-envelope, .fa-facebook, .fa-file
     margin-bottom: 3.5%
-  .n
-    margin-left: 10%
+
   .chart-container
     margin-left: -10%
+  .n
+    margin-top: 5%
+    margin-left: 15%
+  h4
+    font-size: 100%
+    margin-left: 15%
+  h1
+    margin-left: 20%
+
+
 
 
 
 @media (max-width: $breakpoint-mobile)
-  h3
+  h1
+    margin-left: 20%
+  h4
     font-size: 100%
-  .move
-    font-size: 80%
-    margin-left: 24%
+    margin-left: 15%
   .chart-container
     margin-left: -20%
+  .n
+    margin-top: 5%
+    margin-left: 15%
+  .fa-github, .fa-linkedin-square, .fa-envelope, .fa-facebook, .fa-file
+    font-size: 170%

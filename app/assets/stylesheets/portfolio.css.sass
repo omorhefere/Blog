@@ -63,14 +63,17 @@ h4
   margin-left: 25%
 .modal
   margin-right: 20%
-.close
-  margin-right: 12%
+
 
 $breakpoint-tablet: 767px
 $breakpoint-mobile: 568px
 $breakpoint-large: 1080px
 $breakpoint-medium: 770px
 
+@media (max-width: $breakpoint-large)
+
+  .close
+    margin-right: 10%
 @media (max-width: $breakpoint-tablet)
   .close
     margin-right: 20%
